@@ -1,8 +1,6 @@
 
 package proyectogui_carlosd;
-
 public class Estudiante {
-    
     String numeroCuenta;
     String codigoClase;
     int year;
