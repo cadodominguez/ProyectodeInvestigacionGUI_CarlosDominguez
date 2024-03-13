@@ -105,7 +105,7 @@
           <Group type="102" alignment="1" attributes="0">
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="Content" min="-2" pref="601" max="-2" attributes="0"/>
+              <Component id="Content" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

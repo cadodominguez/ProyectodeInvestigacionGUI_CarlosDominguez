@@ -1,19 +1,17 @@
 
 package proyectogui_carlosd;
 public class Estudiante {
-    
     String numeroCuenta;
     String codigoClase;
     int year;
-    int numSec;
+    String numSec;
 
-    public Estudiante(String numeroCuenta, String codigoClase, int year, int numSec) {
+    public Estudiante(String numeroCuenta, String codigoClase, int year, String numSec) {
         this.numeroCuenta = numeroCuenta;
         this.codigoClase = codigoClase;
         this.year = year;
         this.numSec = numSec;
     }
-
     public String getNumeroCuenta() {
         return numeroCuenta;
     }
@@ -38,12 +36,16 @@ public class Estudiante {
         this.year = year;
     }
 
-    public int getNumSec() {
+    public String getNumSec() {
         return numSec;
     }
 
-    public void setNumSec(int numSec) {
+    public void setNumSec(String numSec) {
         this.numSec = numSec;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Estudiante{" + "numeroCuenta=" + numeroCuenta + ", codigoClase=" + codigoClase + ", year=" + year + ", numSec=" + numSec + '}';
+    }
 }
