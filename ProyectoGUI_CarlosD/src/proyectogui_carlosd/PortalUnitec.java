@@ -169,7 +169,7 @@ public class PortalUnitec extends javax.swing.JFrame {
         ArrayList<String> repetidosv = new ArrayList<>();
         ArrayList<String> numerosderepetidos = new ArrayList<>();
         ArrayList<String> norepetidos = new ArrayList<>();
-        String salida = " ESTUDIANTES REGISTRADOS : " + "\n";
+        String salida = "  ESTUDIANTES REGISTRADOS : " + "\n ";
         for (int i = 0; i < Total.size(); i++) {
             Estudiante variable = Total.get(i);
             numeroscuenta.add(variable.getNumeroCuenta());
@@ -193,10 +193,16 @@ public class PortalUnitec extends javax.swing.JFrame {
         }
         //sacar repetidos y no repetidos
         for (int i = 0; i < repetidosv.size(); i++) {
-            salida += repetidosv.get(i) + " - " + numerosderepetidos.get(i) + " \n ";
+            if (salida.contains(repetidosv.get(i))) {
+            }else{
+                salida += repetidosv.get(i) + " - " + numerosderepetidos.get(i) + " \n ";
+            }
         }//mete en un string los repetidos y cuantas veces se repiten
         for (int i = 0; i < norepetidos.size(); i++) {
-            salida += norepetidos.get(i) + " - " + " 1 " + " \n ";
+            if (salida.contains(norepetidos.get(i))) {
+            }else{
+                salida += norepetidos.get(i) + " - " + " 1 " + " \n ";
+            }
         }// mete al string los no repetidos
         JOptionPane.showMessageDialog(null,salida);//salida del joptionpane
     }//GEN-LAST:event_button3ActionPerformed

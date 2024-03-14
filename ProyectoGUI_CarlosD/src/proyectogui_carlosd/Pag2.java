@@ -13,6 +13,10 @@ public class Pag2 extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jTextField4 = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         NumCuenta = new javax.swing.JTextField();
@@ -39,6 +43,32 @@ public class Pag2 extends javax.swing.JPanel {
         jButton1.setText("jButton1");
 
         jTextField4.setText("jTextField4");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -170,7 +200,7 @@ public class Pag2 extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         String cuenta = NumCuenta.getText(); // 12345240
-        String seccion = NumSeccion.getText(); // 31 o 380
+        String seccion = NumSeccion.getText(); // 0 o 300
         String codigo = CodigoClases.getText(); //LCQ100
         String añoS = AñoMat.getText(); // del 1 al 1000
         int año = Integer.parseInt(añoS);
@@ -181,10 +211,10 @@ public class Pag2 extends javax.swing.JPanel {
         if (verfc == true && verfs == true && verfcod == true && verfaños == true) {
             listaEstudiantesglobal.add(new Estudiante(cuenta,codigo,año,seccion));
             JOptionPane.showMessageDialog(null,"Se Agregado con exito al nuevo Estudiante!");
-            NumCuenta.setText(" ");
-            NumSeccion.setText(" ");
-            CodigoClases.setText(" ");
-            AñoMat.setText(" ");
+            NumCuenta.setText("");
+            NumSeccion.setText("");
+            CodigoClases.setText("");
+            AñoMat.setText("");
         }else{
             JOptionPane.showMessageDialog(null,"A ingresado un valor incorrecto en las casillas");
         }
@@ -230,7 +260,6 @@ public class Pag2 extends javax.swing.JPanel {
                 cont2++;
             }
         }
-        System.out.println(nums);
         if (cont == 3 && cont2 == 3) {
             temp = true;
         }
@@ -257,6 +286,10 @@ public class Pag2 extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }
