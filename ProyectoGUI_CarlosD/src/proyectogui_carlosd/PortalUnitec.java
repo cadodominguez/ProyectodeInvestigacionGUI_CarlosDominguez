@@ -2,6 +2,7 @@
 package proyectogui_carlosd;
 import java.awt.BorderLayout;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 public class PortalUnitec extends javax.swing.JFrame {
     static ArrayList<Estudiante> listaEstudiantesglobal = new ArrayList<>();
     public PortalUnitec() {
@@ -162,7 +163,42 @@ public class PortalUnitec extends javax.swing.JFrame {
     }//GEN-LAST:event_button1ActionPerformed
 
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
-        // TODO add your handling code here:
+        //conteo
+        ArrayList<Estudiante> Total = listaEstudiantesglobal;
+        ArrayList<String> numeroscuenta = new ArrayList<>();
+        ArrayList<String> repetidosv = new ArrayList<>();
+        ArrayList<String> numerosderepetidos = new ArrayList<>();
+        ArrayList<String> norepetidos = new ArrayList<>();
+        String salida = " ESTUDIANTES REGISTRADOS : " + "\n";
+        for (int i = 0; i < Total.size(); i++) {
+            Estudiante variable = Total.get(i);
+            numeroscuenta.add(variable.getNumeroCuenta());
+        }
+        //saca solo los numeros de cuenta
+        int contl;
+        for (int i = 0; i < numeroscuenta.size(); i++) {
+            contl = 0;
+            for (int j = 0; j < numeroscuenta.size(); j++) {
+                if (numeroscuenta.get(i).equals(numeroscuenta.get(j))) {
+                    contl++;
+                }
+            }
+            if (contl > 1) {
+                repetidosv.add(numeroscuenta.get(i));
+                String numero = "" + contl;
+                numerosderepetidos.add(numero);
+            }else{
+                norepetidos.add(numeroscuenta.get(i));
+            }
+        }
+        //sacar repetidos y no repetidos
+        for (int i = 0; i < repetidosv.size(); i++) {
+            salida += repetidosv.get(i) + " - " + numerosderepetidos.get(i) + " \n ";
+        }//mete en un string los repetidos y cuantas veces se repiten
+        for (int i = 0; i < norepetidos.size(); i++) {
+            salida += norepetidos.get(i) + " - " + " 1 " + " \n ";
+        }// mete al string los no repetidos
+        JOptionPane.showMessageDialog(null,salida);//salida del joptionpane
     }//GEN-LAST:event_button3ActionPerformed
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
